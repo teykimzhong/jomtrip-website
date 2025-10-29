@@ -1,2 +1,0 @@
-# jomtrip-website
-jomtrip website
