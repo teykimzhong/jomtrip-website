@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jomtrip-homestay.com/sitemap.xml
