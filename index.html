@@ -1,4 +1,4 @@
-<!doctype html>
+  <!doctype html>
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8" />
@@ -169,6 +169,89 @@
       height:24px;
     }
 
+.host-cta{
+  background: rgba(255,255,255,0.95);
+  color: #222;
+  border-radius: 24px;
+  padding: 32px 28px;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+.host-cta h3{
+  margin: 0;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.host-subtitle{
+  margin: 10px 0 22px;
+  font-size: 15px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.host-avatar{
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#fd7c21,#fac334);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34px;
+  margin-bottom: 22px;
+}
+
+.host-form{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.host-form input{
+  padding: 14px 14px;
+  border-radius: 14px;
+  border: 1px solid #ddd;
+  font-size: 15px;
+  background: #fafafa;
+}
+
+.host-form input:focus{
+  outline: none;
+  border-color: #fd7c21;
+  background: #fff;
+}
+
+.btn-whatsapp{
+  margin-top: 18px;
+  width: 100%;
+  padding: 15px;
+  border-radius: 16px;
+  border: none;
+  font-weight: 700;
+  font-size: 16px;
+  background: #25D366;
+  color: #fff;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.btn-whatsapp:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 18px rgba(37,211,102,0.35);
+}
+
+.join-success{
+  display: none;
+  margin-top: 14px;
+  font-size: 14px;
+  color: #2e7d32;
+  font-weight: 600;
+}
+
+    
     footer{
       margin-top:36px;color:rgba(255,255,255,0.9);
       display:flex;justify-content:space-between;align-items:center;padding:16px 0;
@@ -267,9 +350,25 @@
         <h2 data-i18n="about.title">关于我们</h2>
         <p data-i18n="about.content"></p>
       </div>
-      <div class="logo-image-box">
-        <img src="logopage.png" alt="Jomtrip App logo image" style="width:100%;height:100%;border-radius:20px;">
-      </div>
+      <div class="host-cta">
+  <h3 data-i18n="join.title">加入 Jomtrip 成为房东</h3>
+  <p class="host-subtitle" data-i18n="join.subtitle">
+    只需填写简单资料，我们会通过 WhatsApp 与你联系
+  </p>
+
+  <div class="host-avatar">
+    <span>🏠</span>
+  </div>
+
+  <div class="host-form">
+    <input type="text" id="join-name" data-i18n-placeholder="join.name" placeholder="你的名字">
+    <input type="text" id="join-location" data-i18n-placeholder="join.location" placeholder="民宿地点">
+    <input type="number" id="join-count" data-i18n-placeholder="join.count" placeholder="民宿数量">
+  </div>
+
+  <button class="btn-whatsapp" id="join-whatsapp-btn" data-i18n="join.button">
+    WhatsApp 联系我们
+  </button>
     </section>
 
     <!-- 联系我们 -->
@@ -305,6 +404,13 @@
         'download.appstore':'App Store 下载','download.googleplay':'Google Play 下载','download.apk':'APK 下载（暂未开放）',
         'about.title':'关于我们',
         'about.content':`Jomtrip Technologies Resources是一家全新的马来西亚企业，专注于打造更贴近本体文化的民宿预订体验。 我们希望让旅客与房东之间的连接更直接、更真诚，让每一次旅行都充满人情味与享受。<br><br>我们旗下的 Jomtrip App 致力于帮助旅客轻松发现民宿，无论是城市中心的现代公寓，还是别具风格的特色民宿，都能一键预订。 同时，我们也为本地房东提供高效、安全的平台，帮助他们展示独特的住宿空间、提升曝光与收益。<br><br>在这里，每个用户都经过验证，每笔交易都受到保护，房东和房客都可以专注享受旅游体验，而不必担心风险。我们希望，Jomtrip 成为马来西亚最受信赖的本土民宿平台，以科技为桥梁，让更多人看到马来西亚的多元魅力。<br><br>我们的使命：<br>用科技让旅行更简单，让住宿更温暖<br>提供安全、透明、友善的交易环境<br>推动马来西亚民宿产业成长`,
+        'join.title':'加入 Jomtrip 成为房东',
+      	'join.subtitle':'只需填写简单资料，我们会通过 WhatsApp 与你联系',
+      	'join.button':'WhatsApp 联系我们',
+      	'join.success':'我们会尽快联系你',
+      	'join.name':'你的名字',
+	      'join.location':'民宿地点',
+      	'join.count':'民宿数量',
         'contact.title':'联系我们',
         'footer.privacy':'隐私政策','footer.terms':'服务条款'
       },
@@ -316,6 +422,13 @@
         'download.appstore':'Download on App Store','download.googleplay':'Download on Google Play','download.apk':'Download APK (Not yet available)',
         'about.title':'About Us',
         'about.content':`Jomtrip Technologies Resources is a Malaysia-based startup dedicated to creating a homestay booking experience that reflects local culture. We aim to make the connection between travelers and hosts more direct and genuine, making every trip full of warmth and memories.<br><br>Our Jomtrip App helps travelers easily discover homestays — from modern city apartments to unique, character-filled homestays — all bookable with one tap. At the same time, we offer local hosts a secure and efficient platform to showcase their spaces, increase visibility, and grow income.<br><br>In Jomtrip, every user is verified, and every transaction is protected. Hosts and guests can focus on enjoying their travel experience without worry. We hope Jomtrip will become Malaysia’s most trusted local homestay platform — a bridge that uses technology to share the nation’s cultural diversity.<br><br>Our Mission:<br>Use technology to make travel simpler and stays warmer<br>Provide a safe, transparent, and friendly environment<br>Promote the growth of Malaysia’s homestay industry.`,
+        'join.title':'Become a Jomtrip Host',
+      	'join.subtitle':'Fill in a few details and we will contact you via WhatsApp',
+      	'join.button':'Contact via WhatsApp',
+      	'join.success':'We will contact you shortly',
+      	'join.name':'Your name',
+      	'join.location':'Homestay location',
+      	'join.count':'Number of units',
         'contact.title':'Contact Us',
         'footer.privacy':'Privacy Policy','footer.terms':'Terms of Service'
       },
@@ -327,6 +440,13 @@
         'download.appstore':'Muat Turun di App Store','download.googleplay':'Muat turun di Google Play','download.apk':'Muat Turun APK (Belum dibuka)',
         'about.title':'Tentang Kami',
         'about.content':`Jomtrip Technologies Resources ialah syarikat baharu berpangkalan di Malaysia yang berdedikasi untuk membina pengalaman tempahan homestay yang mencerminkan budaya tempatan sebenar. Kami berhasrat untuk menjadikan hubungan antara pelancong dan tuan rumah lebih langsung dan tulen, agar setiap perjalanan penuh dengan kehangatan dan kenangan.<br><br>Aplikasi kami, Jomtrip App, membantu pelancong menemui pelbagai homestay dengan mudah — daripada pangsapuri moden di pusat bandar hingga ke penginapan unik yang beridentiti tempatan — semuanya boleh ditempah dengan satu sentuhan. Pada masa yang sama, kami menawarkan platform yang selamat dan cekap untuk tuan rumah tempatan mempamerkan ruang mereka, meningkatkan pendedahan dan pendapatan.<br><br>Dalam Jomtrip, setiap pengguna disahkan, dan setiap transaksi dilindungi, supaya tuan rumah dan tetamu boleh menikmati pengalaman pelancongan tanpa kebimbangan. Kami berharap Jomtrip akan menjadi platform homestay tempatan yang paling dipercayai di Malaysia — jambatan yang menggunakan teknologi untuk memperkenalkan kepelbagaian budaya negara.<br><br>Misi Kami:<br>Menggunakan teknologi untuk memudahkan perjalanan dan menjadikan penginapan lebih hangat<br>Menyediakan persekitaran yang selamat, telus dan mesra<br>Menyokong pertumbuhan industri homestay Malaysia.`,
+        'join.title':'Jadi Hos Jomtrip',
+	      'join.subtitle':'Isi maklumat ringkas dan kami akan hubungi anda melalui WhatsApp',
+      	'join.button':'Hubungi melalui WhatsApp',
+      	'join.success':'Kami akan menghubungi anda tidak lama lagi',
+      	'join.name':'Nama anda',
+      	'join.location':'Lokasi homestay',
+	      'join.count':'Bilangan unit',
         'contact.title':'Hubungi Kami',
         'footer.privacy':'Dasar Privasi','footer.terms':'Terma dan Syarat'
       }
@@ -342,26 +462,98 @@
         const key = el.getAttribute('data-i18n-block');
         if(bundle[key]) el.textContent = bundle[key];
       });
+
+      document.querySelectorAll('.lang-btn').forEach(btn=>{
+        btn.addEventListener('click',()=> setLanguage(btn.getAttribute('data-lang')));
+      });
+
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{
+        const key = el.getAttribute('data-i18n-placeholder');
+        if(bundle[key]) el.placeholder = bundle[key];
+      });
+      
       const aboutEl = document.querySelector('[data-i18n="about.content"]');
       if (aboutEl && bundle['about.content']) aboutEl.innerHTML = bundle['about.content'];
       document.documentElement.lang = lang;
       localStorage.setItem('jomtrip_lang', lang);
     }
-
-    document.querySelectorAll('.lang-btn').forEach(btn=>{
-      btn.addEventListener('click',()=> setLanguage(btn.getAttribute('data-lang')));
-    });
-
+    
     const saved = localStorage.getItem('jomtrip_lang') || navigator.language || 'zh-CN';
     const pick = saved.startsWith('en') ? 'en' : (saved.startsWith('ms') ? 'ms' : 'zh-CN');
     setLanguage(pick);
   </script>
 
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('join-whatsapp-btn');
+    if(!btn) return;
+
+    btn.addEventListener('click', () => {
+      const name = document.getElementById('join-name')?.value.trim();
+      const locationInput = document.getElementById('join-location')?.value.trim();
+      const count = document.getElementById('join-count')?.value.trim();
+
+      if(!name || !locationInput || !count){
+        alert('请填写完整资料');
+        return;
+      }
+
+      const lang = document.documentElement.lang || 'zh-CN';
+      let message = '';
+
+      if(lang === 'en'){
+        message =
+  `Hello Jomtrip 👋
+
+  Name: ${name}
+  Homestay Location: ${locationInput}
+  Number of Units: ${count}
+
+  I would like to join Jomtrip.`;
+      }else if(lang === 'ms'){
+        message =
+  `Hai Jomtrip 👋
+
+  Nama: ${name}
+  Lokasi Homestay: ${locationInput}
+  Jumlah Unit: ${count}
+
+  Saya berminat untuk menyertai Jomtrip.`;
+      }else{
+        message =
+  `你好 Jomtrip 👋
+
+  名字：${name}
+  民宿地点：${locationInput}
+  民宿数量：${count}
+  
+  我想加入 Jomtrip。`;
+      }
+
+   const phone = '601126912801';
+   const url =
+      'https://api.whatsapp.com/send?phone=' +
+      phone +
+      '&text=' +
+      encodeURIComponent(message);
+
+    // ✅ 关键：用 replace / href 都可以
+    window.location.href = url;
+
+    const success = document.getElementById('join-success');
+    if(success){
+      success.style.display = 'block';
+    }
+  });
+});
+</script>
+  
   <script data-goatcounter="https://jomtrip.goatcounter.com/count"
           async src="//gc.zgo.at/count.js"></script>
   
 </body>
 </html>
+
 
 
 
